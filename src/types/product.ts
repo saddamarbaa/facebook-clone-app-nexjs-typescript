@@ -12,3 +12,10 @@ export type ProductT = {
 	image: string
 	rating: Rating
 }
+
+export type GamingT = {
+	id: number
+	title: string
+	image: string
+	description: string
+}

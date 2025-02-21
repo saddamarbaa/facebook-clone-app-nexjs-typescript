@@ -21,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head />
-			<body className="bg-[#f0f2f5]  dark:bg-zinc-950  overflow-hidden overflow-y-auto flex flex-col h-screen">
+			<body className="bg-[#f0f2f5]  dark:bg-zinc-950  overflow-hidden overflow-y-auto flex flex-col">
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="light"
