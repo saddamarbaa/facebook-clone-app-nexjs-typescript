@@ -20,7 +20,7 @@ import Image from 'next/image'
 
 const SideBar: React.FunctionComponent = () => {
 	return (
-		<div className="flex-col min-h-screen max-w-sm md:w-full  flex mr-10 md:mr-0">
+		<div className="flex-col min-h-screen max-w-sm   lg:flex-[0.3] flex mr-10">
 			<div id="fixed-position" className="fixed max-w-sm w-full">
 				{/* Sidebar Header */}
 				<div className="mb-4 relative flex items-center transition duration-300 hover:bg-gray-300 dark:hover:bg-gray-800 p-2 ">

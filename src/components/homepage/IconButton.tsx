@@ -6,6 +6,9 @@ interface IconButtonProps {
 	badgeCount?: number
 	className?: string
 	iconClassName?: string
+	badgeClassName?: string
+	'aria-label'?: string
+	iconSize?: number // Customizable icon size
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
@@ -13,51 +16,36 @@ const IconButton: React.FC<IconButtonProps> = ({
 	badgeCount = null,
 	className,
 	iconClassName,
+	badgeClassName,
+	'aria-label': ariaLabel,
+	iconSize = 7, // Default icon size to rem units
 }) => {
 	return (
 		<div
+			role="button" // Making it behave like a button for screen readers
+			tabIndex={0} // Allow keyboard focus
+			aria-label={ariaLabel} // Adding accessibility label
 			className={cn(
-				'relative group px-7 py-4 cursor-pointer transition-all duration-200 ease-in-out hover:rounded',
+				'relative group p-3 cursor-pointer transition-all duration-200 ease-in-out hover:rounded-full',
 				'hover:bg-gray-100 dark:hover:bg-gray-800',
 				className,
 			)}>
 			<Icon
 				className={cn(
-					'w-7 h-7 transition-colors group-hover:text-blue-600',
-					// Light mode icon color
-					'text-gray-600 dark:text-gray-300',
-					// Icon-specific classes
+					`w-${iconSize} h-${iconSize} transition-colors group-hover:text-blue-600`,
+					'text-gray-600 dark:text-gray-300', // Default icon color
 					iconClassName,
 				)}
 			/>
 
+			{/* Conditionally render badge if present */}
 			{badgeCount !== null && (
-				<span className="absolute -top-[14px] right-[13px] bg-red-500 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">
-					{badgeCount}
-				</span>
-			)}
-		</div>
-	)
-
-	return (
-		<div
-			className={cn(
-				'relative group p-2 rounded-full cursor-pointer transition-all duration-200 ease-in-out',
-				'hover:bg-gray-200 dark:hover:bg-gray-800 hover:shadow-md dark:hover:shadow-lg',
-				className,
-			)}>
-			<Icon
-				className={cn(
-					'w-7 h-7 transition-colors group-hover:text-blue-600',
-					// Light mode icon color
-					'text-gray-600 dark:text-gray-300',
-					// Icon-specific classes
-					iconClassName,
-				)}
-			/>
-
-			{badgeCount !== null && (
-				<span className="absolute -top-[8px] right-[13px] bg-red-500 text-white text-[11px] font-bold rounded-full h-5 w-5 flex items-center justify-center">
+				<span
+					className={cn(
+						'absolute -top-[10px] right-[10px] bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center',
+						'h-5 w-5', // Default badge size
+						badgeClassName, // Allowing custom class for badge
+					)}>
 					{badgeCount}
 				</span>
 			)}

@@ -9,7 +9,7 @@ const StaticPosts: React.FunctionComponent = () => {
 			{mockPosts.map((post, index) => (
 				<Post
 					// Combine index, random number, and timestamp for a more unique key
-					key={post?.id || `post-${index}-${Date.now()}-${Math.random()}`}
+					key={post?.id + `post-${index}-${Math.random()}`}
 					userName={post?.name || ''}
 					userImage={post?.imgUrl || ''}
 					postImage={post?.optionPostImage}

@@ -4,8 +4,7 @@ import Stories from './Stories'
 
 const Feeds: React.FunctionComponent = () => {
 	return (
-		<div className="flex flex-col items-center flex-1 pb-8 md:min-w-[34.375rem] mx-5 md:mx-0 max-w-2xl ">
-			{/* {showCompose && <ModalOverlay />} */}
+		<div className="flex flex-1 flex-col  pb-8  mx-5 max-w-2xl ">
 			<Stories />
 			<AddPost />
 			<StaticPosts />

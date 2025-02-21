@@ -29,7 +29,7 @@ const Option: React.FunctionComponent<OptionProps> = ({
 				/>
 			)}
 
-			<div className="relative ml-3 hidden lg:block">
+			<div className="relative ml-3 hidden lg:flex flex-col">
 				<p>{title}</p>
 				{option && (
 					<div className="absolute bottom-[-1rem] flex items-center text-blue-600 text-[12px]">
