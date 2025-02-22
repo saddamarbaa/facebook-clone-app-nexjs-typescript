@@ -38,7 +38,7 @@ const SidebarItem = ({ Icon, label }: SidebarItemProps) => (
 
 // Reusable Product Card Component with mock data
 const ProductCard = ({ product }: { product: ProductT }) => (
-	<Card className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transition transform hover:scale-105 duration-200">
+	<Card key={product.id} className="p-4">
 		<div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
 			{/* eslint-disable-next-line @next/next/no-img-element */}
 			<img
@@ -68,7 +68,6 @@ export default function MarketplacePage() {
 			<div className="flex-col min-h-screen max-w-sm  hidden lg:flex lg:flex-[0.3]  mr-10">
 				<div id="fixed-position" className="fixed max-w-sm w-full">
 					{/* Sidebar */}
-
 					<Card className="rounded-lg shadow-lg h-full flex flex-col space-y-5 py-4">
 						<div className="flex items-center justify-between  px-4 mb-4">
 							<h2 className="text-3xl font-bold">Marketplace</h2>
@@ -182,21 +181,9 @@ export default function MarketplacePage() {
 
 			<div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{productMockData.map((product) => (
-					<ProductCard product={product} key={product.id} />
+					<ProductCard key={product.id} product={product} />
 				))}
 			</div>
-
-			{/* Main Marketplace Section */}
-			<main className="ml-1/4 w-3/4 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hidden">
-				<h1 className="text-3xl font-bold mb-6">Marketplace</h1>
-
-				{/* Product Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{productMockData.map((product) => (
-						<ProductCard key={product.id} product={product} />
-					))}
-				</div>
-			</main>
 		</div>
 	)
 }
