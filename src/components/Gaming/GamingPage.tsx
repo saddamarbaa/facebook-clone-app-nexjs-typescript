@@ -16,10 +16,6 @@ export default function GamingPage() {
 
 			{/* Main Content */}
 			<main className="flex-1">
-				<h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-200">
-					Featured Games
-				</h1>
-
 				{/* Featured Games Grid */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{gamingMockData.map((game, index) => (

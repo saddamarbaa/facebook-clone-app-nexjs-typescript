@@ -67,7 +67,7 @@ const Header: React.FC = () => {
 							iconClassName="text-blue-500 dark:text-blue-500"
 						/>
 					</Link>
-					<Link href="/groups">
+					<Link href="/marketplace">
 						<IconButton
 							Icon={Dock}
 							iconClassName="w-6 h-6"
