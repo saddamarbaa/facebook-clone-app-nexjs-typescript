@@ -33,7 +33,9 @@ const GameCard = ({ game }: { game: GamingT }) => (
 		{/* eslint-disable-next-line @next/next/no-img-element */}
 		<img
 			className="object-cover object-center w-full rounded-lg h-48"
-			src={game.image}
+			src={
+				'https://tse2.mm.bing.net/th?id=OIP.FYRzBReWPUBjkvoyc0IRLgHaEK&pid=Api&P=0&h=220'
+			}
 			alt={game.title}
 		/>
 		<h3 className="text-lg font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-200">
